@@ -1,0 +1,16 @@
+# site.yml
+---
+- hosts: all    # Indicate hosts this applies to (host or group name)
+  roles:        # Enumerate roles to be applied
+    - bertvv.rh-base
+- hosts: srv010    # Indicate hosts this applies to (host or group name)
+  roles:        # Enumerate roles to be applied
+    - bertvv.mariadb
+    - bertvv.httpd
+    - bertvv.wordpress
+- hosts: srv001    # Indicate hosts this applies to (host or group name)
+  roles:        # Enumerate roles to be applied
+    - bertvv.bind
+- hosts: srv003
+  roles:
+    - bertvv.dhcp

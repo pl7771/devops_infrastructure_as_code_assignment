@@ -1,0 +1,13 @@
+---
+rhbase_users:
+  - name: ilya
+    password: 'password'
+    ssh_key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMJOkHZYpBC6YuX7OO5XbW4pXOSyi8pC2itbkGhEzv0O ilya.mikhaylov@student.hogent.be'
+mariadb_databases:
+  - name: wordpress
+mariadb_users:
+  - name: wordpress
+    password: password #just for to make it easy
+    priv: '*.*:ALL'
+mariadb_root_password: password
+wordpress_password: password

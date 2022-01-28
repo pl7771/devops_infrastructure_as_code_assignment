@@ -1,0 +1,16 @@
+# group_vars/all.yml
+# Variables visible to all nodes
+---
+rhbase_repositories:
+  - epel-release
+rhbase_install_packages:
+  - bash-completion
+  - vim-enhanced
+  - bind-utils
+  - git
+  - nano
+  - tree
+  - wget
+rhbase_firewall_allow_services: [http, https, dns, dhcp]
+rhbase_firewall_allow_ports: ["5022/tcp"]
+

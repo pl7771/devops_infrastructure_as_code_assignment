@@ -1,0 +1,24 @@
+#host_vars/srv003
+---
+dhcp_global_domain_name: infra.lan
+dhcp_global_domain_name_servers: 172.16.128.2
+dhcp_global_default_lease_time: 14400 #4u
+dhcp_global_subnet_make: 255.255.0.0
+
+dhcp_subnets:
+  - ip: 172.16.0.0
+    netmask: 255.255.0.0
+    range_begin: 172.16.128.1
+    range_end: 172.16.191.254
+    deny: 'members of "vbox"'
+  - ip: 172.16.0.0
+    netmask: 255.255.0.0
+    range_begin: 172.16.192.1
+    range_end: 172.16.255.253
+    allow: 'members of "vbox"'
+dhcp_global_routers: 172.16.255.254
+
+dhcp_hosts:
+  - name: workstation
+    mac: '08:00:27:82:6E:0B'
+    ip: 172.16.128.10

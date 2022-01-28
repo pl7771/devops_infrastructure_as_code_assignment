@@ -1,0 +1,48 @@
+#host_vars/srv001
+---
+bind_allow_query:
+  - any
+bind_allow_recursion:
+  - any 
+bind_forward_only: true
+bind_forwarders:
+  - '8.8.8.8'
+bind_dnssec_enable: false
+bind_recursion: true
+bind_statistics_channels: true
+bind_statistics_allow:
+  - any
+bind_listen_ipv4:
+  - any
+
+bind_zones:
+  - name: infra.lan
+    create_reverse_zones: false
+    primaries:
+      - 172.16.128.2   
+    name_servers:
+      - srv001
+    networks:
+      - '192.0.2'
+      - '10'
+      - '172.16'
+    hosts:
+      - name: srv001
+        ip: 172.16.128.2
+        aliases:
+          - ns
+      - name: '@'
+        ip: 172.16.128.10
+        aliases:
+          - www
+      - name: srv003
+        ip: 172.16.128.3
+        aliases:
+          - dhcp
+      - name: r001
+        ip: 172.16.255.254
+        aliases:
+          - gw
+        
+  
+    
